@@ -17,6 +17,16 @@
 		534B73892AC3BD6C0048AC28 /* AppListingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73882AC3BD6C0048AC28 /* AppListingUITestsLaunchTests.swift */; };
 		534B73A92AC400CB0048AC28 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73A82AC400CB0048AC28 /* RegistrationView.swift */; };
 		534B73AB2AC400EB0048AC28 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73AA2AC400EB0048AC28 /* LoginView.swift */; };
+		534B73C22AC412A40048AC28 /* ValidateEmailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73C12AC412A40048AC28 /* ValidateEmailUseCase.swift */; };
+		534B73C42AC412C00048AC28 /* ValidatePasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73C32AC412C00048AC28 /* ValidatePasswordUseCase.swift */; };
+		534B73C62AC412D40048AC28 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73C52AC412D40048AC28 /* ValidationResult.swift */; };
+		534B73CA2AC413070048AC28 /* ValidatePasswordUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73C92AC413070048AC28 /* ValidatePasswordUseCaseTest.swift */; };
+		534B73CB2AC413120048AC28 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73C52AC412D40048AC28 /* ValidationResult.swift */; };
+		534B73CC2AC413150048AC28 /* ValidateEmailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73C12AC412A40048AC28 /* ValidateEmailUseCase.swift */; };
+		534B73CD2AC413170048AC28 /* ValidatePasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73C32AC412C00048AC28 /* ValidatePasswordUseCase.swift */; };
+		534B73CF2AC4261C0048AC28 /* ValidateEmailUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73CE2AC4261C0048AC28 /* ValidateEmailUseCaseTest.swift */; };
+		534B73D12AC4266B0048AC28 /* ValidateUsernameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73D02AC4266B0048AC28 /* ValidateUsernameUseCase.swift */; };
+		534B73D32AC4274F0048AC28 /* ValidateUsernameUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73D22AC4274F0048AC28 /* ValidateUsernameUseCaseTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +60,13 @@
 		534B73882AC3BD6C0048AC28 /* AppListingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		534B73A82AC400CB0048AC28 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		534B73AA2AC400EB0048AC28 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		534B73C12AC412A40048AC28 /* ValidateEmailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateEmailUseCase.swift; sourceTree = "<group>"; };
+		534B73C32AC412C00048AC28 /* ValidatePasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatePasswordUseCase.swift; sourceTree = "<group>"; };
+		534B73C52AC412D40048AC28 /* ValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
+		534B73C92AC413070048AC28 /* ValidatePasswordUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatePasswordUseCaseTest.swift; sourceTree = "<group>"; };
+		534B73CE2AC4261C0048AC28 /* ValidateEmailUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateEmailUseCaseTest.swift; sourceTree = "<group>"; };
+		534B73D02AC4266B0048AC28 /* ValidateUsernameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUsernameUseCase.swift; sourceTree = "<group>"; };
+		534B73D22AC4274F0048AC28 /* ValidateUsernameUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUsernameUseCaseTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +97,7 @@
 		534B735D2AC3BD6A0048AC28 = {
 			isa = PBXGroup;
 			children = (
+				534B73BF2AC412850048AC28 /* Domain */,
 				534B73682AC3BD6A0048AC28 /* AppListing */,
 				534B737B2AC3BD6C0048AC28 /* AppListingTests */,
 				534B73852AC3BD6C0048AC28 /* AppListingUITests */,
@@ -121,6 +139,7 @@
 		534B737B2AC3BD6C0048AC28 /* AppListingTests */ = {
 			isa = PBXGroup;
 			children = (
+				534B73C72AC412F20048AC28 /* UseCase */,
 				534B737C2AC3BD6C0048AC28 /* AppListingTests.swift */,
 			);
 			path = AppListingTests;
@@ -142,6 +161,43 @@
 				534B73AA2AC400EB0048AC28 /* LoginView.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		534B73BF2AC412850048AC28 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				534B73C02AC4128A0048AC28 /* Validations */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		534B73C02AC4128A0048AC28 /* Validations */ = {
+			isa = PBXGroup;
+			children = (
+				534B73C12AC412A40048AC28 /* ValidateEmailUseCase.swift */,
+				534B73C32AC412C00048AC28 /* ValidatePasswordUseCase.swift */,
+				534B73D02AC4266B0048AC28 /* ValidateUsernameUseCase.swift */,
+				534B73C52AC412D40048AC28 /* ValidationResult.swift */,
+			);
+			path = Validations;
+			sourceTree = "<group>";
+		};
+		534B73C72AC412F20048AC28 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				534B73C82AC412FA0048AC28 /* Unit Tests */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		534B73C82AC412FA0048AC28 /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				534B73C92AC413070048AC28 /* ValidatePasswordUseCaseTest.swift */,
+				534B73CE2AC4261C0048AC28 /* ValidateEmailUseCaseTest.swift */,
+				534B73D22AC4274F0048AC28 /* ValidateUsernameUseCaseTest.swift */,
+			);
+			path = "Unit Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +333,10 @@
 				534B736C2AC3BD6A0048AC28 /* ContentView.swift in Sources */,
 				534B736E2AC3BD6A0048AC28 /* Item.swift in Sources */,
 				534B736A2AC3BD6A0048AC28 /* AppListingApp.swift in Sources */,
+				534B73C62AC412D40048AC28 /* ValidationResult.swift in Sources */,
 				534B73AB2AC400EB0048AC28 /* LoginView.swift in Sources */,
+				534B73C42AC412C00048AC28 /* ValidatePasswordUseCase.swift in Sources */,
+				534B73C22AC412A40048AC28 /* ValidateEmailUseCase.swift in Sources */,
 				534B73A92AC400CB0048AC28 /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,7 +345,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				534B73CC2AC413150048AC28 /* ValidateEmailUseCase.swift in Sources */,
+				534B73CA2AC413070048AC28 /* ValidatePasswordUseCaseTest.swift in Sources */,
+				534B73CF2AC4261C0048AC28 /* ValidateEmailUseCaseTest.swift in Sources */,
 				534B737D2AC3BD6C0048AC28 /* AppListingTests.swift in Sources */,
+				534B73CD2AC413170048AC28 /* ValidatePasswordUseCase.swift in Sources */,
+				534B73D32AC4274F0048AC28 /* ValidateUsernameUseCaseTest.swift in Sources */,
+				534B73CB2AC413120048AC28 /* ValidationResult.swift in Sources */,
+				534B73D12AC4266B0048AC28 /* ValidateUsernameUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
