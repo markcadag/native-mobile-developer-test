@@ -25,7 +25,7 @@ struct AppListingApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RegistrationView()
         }
         .modelContainer(sharedModelContainer)
     }

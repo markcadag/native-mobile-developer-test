@@ -9,5 +9,5 @@ import Foundation
 
 struct ValidationResult {
     var success: Bool
-    var errorMessage: String?
+    var message: String?
 }

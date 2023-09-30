@@ -16,17 +16,39 @@
 		534B73872AC3BD6C0048AC28 /* AppListingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73862AC3BD6C0048AC28 /* AppListingUITests.swift */; };
 		534B73892AC3BD6C0048AC28 /* AppListingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73882AC3BD6C0048AC28 /* AppListingUITestsLaunchTests.swift */; };
 		534B73A92AC400CB0048AC28 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73A82AC400CB0048AC28 /* RegistrationView.swift */; };
-		534B73AB2AC400EB0048AC28 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73AA2AC400EB0048AC28 /* LoginView.swift */; };
-		534B73C22AC412A40048AC28 /* ValidateEmailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73C12AC412A40048AC28 /* ValidateEmailUseCase.swift */; };
-		534B73C42AC412C00048AC28 /* ValidatePasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73C32AC412C00048AC28 /* ValidatePasswordUseCase.swift */; };
 		534B73C62AC412D40048AC28 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73C52AC412D40048AC28 /* ValidationResult.swift */; };
-		534B73CA2AC413070048AC28 /* ValidatePasswordUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73C92AC413070048AC28 /* ValidatePasswordUseCaseTest.swift */; };
 		534B73CB2AC413120048AC28 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73C52AC412D40048AC28 /* ValidationResult.swift */; };
-		534B73CC2AC413150048AC28 /* ValidateEmailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73C12AC412A40048AC28 /* ValidateEmailUseCase.swift */; };
-		534B73CD2AC413170048AC28 /* ValidatePasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73C32AC412C00048AC28 /* ValidatePasswordUseCase.swift */; };
-		534B73CF2AC4261C0048AC28 /* ValidateEmailUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73CE2AC4261C0048AC28 /* ValidateEmailUseCaseTest.swift */; };
-		534B73D12AC4266B0048AC28 /* ValidateUsernameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73D02AC4266B0048AC28 /* ValidateUsernameUseCase.swift */; };
-		534B73D32AC4274F0048AC28 /* ValidateUsernameUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73D22AC4274F0048AC28 /* ValidateUsernameUseCaseTest.swift */; };
+		534B73D82AC428DC0048AC28 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73D72AC428DC0048AC28 /* UserDataSource.swift */; };
+		534B73DB2AC429240048AC28 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73DA2AC429240048AC28 /* User.swift */; };
+		534B73E32AC4FB280048AC28 /* UserRegistrationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73E22AC4FB280048AC28 /* UserRegistrationUseCase.swift */; };
+		534B73E52AC4FBD80048AC28 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73E42AC4FBD80048AC28 /* UseCaseProvider.swift */; };
+		534B73EF2AC51A180048AC28 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73EE2AC51A180048AC28 /* UserRepositoryImpl.swift */; };
+		534B73F02AC51A180048AC28 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73EE2AC51A180048AC28 /* UserRepositoryImpl.swift */; };
+		534B73F32AC51AEA0048AC28 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73F22AC51AEA0048AC28 /* UserRepository.swift */; };
+		534B73F42AC51AEA0048AC28 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73F22AC51AEA0048AC28 /* UserRepository.swift */; };
+		534B73F52AC51BCD0048AC28 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73DA2AC429240048AC28 /* User.swift */; };
+		534B73F92AC5467F0048AC28 /* SecureStorageDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73F82AC5467F0048AC28 /* SecureStorageDatasource.swift */; };
+		534B73FA2AC5467F0048AC28 /* SecureStorageDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73F82AC5467F0048AC28 /* SecureStorageDatasource.swift */; };
+		534B73FB2AC54B510048AC28 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73D72AC428DC0048AC28 /* UserDataSource.swift */; };
+		534B73FD2AC54BA10048AC28 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73FC2AC54BA10048AC28 /* KeyChainManager.swift */; };
+		534B73FE2AC54BA10048AC28 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73FC2AC54BA10048AC28 /* KeyChainManager.swift */; };
+		534B74082AC55FE10048AC28 /* UserRegistrationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73E22AC4FB280048AC28 /* UserRegistrationUseCase.swift */; };
+		534B740B2AC628A40048AC28 /* UserSecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B740A2AC628A40048AC28 /* UserSecureStorage.swift */; };
+		534B740C2AC628A40048AC28 /* UserSecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B740A2AC628A40048AC28 /* UserSecureStorage.swift */; };
+		534B740E2AC638B30048AC28 /* DomainConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B740D2AC638B30048AC28 /* DomainConvertible.swift */; };
+		534B740F2AC638B30048AC28 /* DomainConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B740D2AC638B30048AC28 /* DomainConvertible.swift */; };
+		534B74112AC6398D0048AC28 /* SecureStorageConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B74102AC6398D0048AC28 /* SecureStorageConvertible.swift */; };
+		534B74122AC6398D0048AC28 /* SecureStorageConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B74102AC6398D0048AC28 /* SecureStorageConvertible.swift */; };
+		534B741C2AC6B13E0048AC28 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 534B741B2AC6B13E0048AC28 /* Quick */; };
+		534B741F2AC6B1690048AC28 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 534B741E2AC6B1690048AC28 /* Nimble */; };
+		534B74242AC7C2DD0048AC28 /* RegistrationValidationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B74232AC7C2DD0048AC28 /* RegistrationValidationUseCase.swift */; };
+		534B74252AC7C2DD0048AC28 /* RegistrationValidationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B74232AC7C2DD0048AC28 /* RegistrationValidationUseCase.swift */; };
+		534B74292AC7D1FF0048AC28 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B74282AC7D1FF0048AC28 /* RegistrationViewModel.swift */; };
+		534B742A2AC7D1FF0048AC28 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B74282AC7D1FF0048AC28 /* RegistrationViewModel.swift */; };
+		534B742D2AC7FA940048AC28 /* RegistrationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B742C2AC7FA940048AC28 /* RegistrationError.swift */; };
+		534B742E2AC7FA940048AC28 /* RegistrationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B742C2AC7FA940048AC28 /* RegistrationError.swift */; };
+		534B74302AC7FAC60048AC28 /* UserValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B742F2AC7FAC60048AC28 /* UserValidationError.swift */; };
+		534B74312AC7FAC60048AC28 /* UserValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B742F2AC7FAC60048AC28 /* UserValidationError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,14 +81,22 @@
 		534B73862AC3BD6C0048AC28 /* AppListingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListingUITests.swift; sourceTree = "<group>"; };
 		534B73882AC3BD6C0048AC28 /* AppListingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		534B73A82AC400CB0048AC28 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
-		534B73AA2AC400EB0048AC28 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		534B73C12AC412A40048AC28 /* ValidateEmailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateEmailUseCase.swift; sourceTree = "<group>"; };
-		534B73C32AC412C00048AC28 /* ValidatePasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatePasswordUseCase.swift; sourceTree = "<group>"; };
 		534B73C52AC412D40048AC28 /* ValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
-		534B73C92AC413070048AC28 /* ValidatePasswordUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatePasswordUseCaseTest.swift; sourceTree = "<group>"; };
-		534B73CE2AC4261C0048AC28 /* ValidateEmailUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateEmailUseCaseTest.swift; sourceTree = "<group>"; };
-		534B73D02AC4266B0048AC28 /* ValidateUsernameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUsernameUseCase.swift; sourceTree = "<group>"; };
-		534B73D22AC4274F0048AC28 /* ValidateUsernameUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUsernameUseCaseTest.swift; sourceTree = "<group>"; };
+		534B73D72AC428DC0048AC28 /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
+		534B73DA2AC429240048AC28 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		534B73E22AC4FB280048AC28 /* UserRegistrationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationUseCase.swift; sourceTree = "<group>"; };
+		534B73E42AC4FBD80048AC28 /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
+		534B73EE2AC51A180048AC28 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
+		534B73F22AC51AEA0048AC28 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		534B73F82AC5467F0048AC28 /* SecureStorageDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageDatasource.swift; sourceTree = "<group>"; };
+		534B73FC2AC54BA10048AC28 /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		534B740A2AC628A40048AC28 /* UserSecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSecureStorage.swift; sourceTree = "<group>"; };
+		534B740D2AC638B30048AC28 /* DomainConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConvertible.swift; sourceTree = "<group>"; };
+		534B74102AC6398D0048AC28 /* SecureStorageConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageConvertible.swift; sourceTree = "<group>"; };
+		534B74232AC7C2DD0048AC28 /* RegistrationValidationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationValidationUseCase.swift; sourceTree = "<group>"; };
+		534B74282AC7D1FF0048AC28 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		534B742C2AC7FA940048AC28 /* RegistrationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationError.swift; sourceTree = "<group>"; };
+		534B742F2AC7FAC60048AC28 /* UserValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserValidationError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				534B741C2AC6B13E0048AC28 /* Quick in Frameworks */,
+				534B741F2AC6B1690048AC28 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +129,7 @@
 		534B735D2AC3BD6A0048AC28 = {
 			isa = PBXGroup;
 			children = (
+				534B73D42AC4283E0048AC28 /* Data */,
 				534B73BF2AC412850048AC28 /* Domain */,
 				534B73682AC3BD6A0048AC28 /* AppListing */,
 				534B737B2AC3BD6C0048AC28 /* AppListingTests */,
@@ -157,8 +190,7 @@
 		534B73A72AC400A90048AC28 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				534B73A82AC400CB0048AC28 /* RegistrationView.swift */,
-				534B73AA2AC400EB0048AC28 /* LoginView.swift */,
+				534B74272AC7D1BB0048AC28 /* Registration */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -166,7 +198,10 @@
 		534B73BF2AC412850048AC28 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				534B73C02AC4128A0048AC28 /* Validations */,
+				534B73F12AC51AC50048AC28 /* Repository */,
+				534B73E12AC42B390048AC28 /* UseCases */,
+				534B73E02AC42B290048AC28 /* User */,
+				534B73D92AC4291A0048AC28 /* Model */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -174,10 +209,8 @@
 		534B73C02AC4128A0048AC28 /* Validations */ = {
 			isa = PBXGroup;
 			children = (
-				534B73C12AC412A40048AC28 /* ValidateEmailUseCase.swift */,
-				534B73C32AC412C00048AC28 /* ValidatePasswordUseCase.swift */,
-				534B73D02AC4266B0048AC28 /* ValidateUsernameUseCase.swift */,
 				534B73C52AC412D40048AC28 /* ValidationResult.swift */,
+				534B74232AC7C2DD0048AC28 /* RegistrationValidationUseCase.swift */,
 			);
 			path = Validations;
 			sourceTree = "<group>";
@@ -185,19 +218,114 @@
 		534B73C72AC412F20048AC28 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				534B73C82AC412FA0048AC28 /* Unit Tests */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
 		};
-		534B73C82AC412FA0048AC28 /* Unit Tests */ = {
+		534B73D42AC4283E0048AC28 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				534B73C92AC413070048AC28 /* ValidatePasswordUseCaseTest.swift */,
-				534B73CE2AC4261C0048AC28 /* ValidateEmailUseCaseTest.swift */,
-				534B73D22AC4274F0048AC28 /* ValidateUsernameUseCaseTest.swift */,
+				534B73ED2AC519A40048AC28 /* Repository */,
+				534B73D62AC428CE0048AC28 /* Datasource */,
 			);
-			path = "Unit Tests";
+			path = Data;
+			sourceTree = "<group>";
+		};
+		534B73D62AC428CE0048AC28 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				534B73F72AC546650048AC28 /* SecureStorage */,
+				534B73F62AC5465B0048AC28 /* API */,
+				534B73D72AC428DC0048AC28 /* UserDataSource.swift */,
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		534B73D92AC4291A0048AC28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				534B742B2AC7FA870048AC28 /* Errors */,
+				534B73DA2AC429240048AC28 /* User.swift */,
+				534B740D2AC638B30048AC28 /* DomainConvertible.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		534B73E02AC42B290048AC28 /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		534B73E12AC42B390048AC28 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				534B74192AC648630048AC28 /* User */,
+				534B73C02AC4128A0048AC28 /* Validations */,
+				534B73E42AC4FBD80048AC28 /* UseCaseProvider.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		534B73ED2AC519A40048AC28 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				534B73EE2AC51A180048AC28 /* UserRepositoryImpl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		534B73F12AC51AC50048AC28 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				534B73F22AC51AEA0048AC28 /* UserRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		534B73F62AC5465B0048AC28 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		534B73F72AC546650048AC28 /* SecureStorage */ = {
+			isa = PBXGroup;
+			children = (
+				534B740A2AC628A40048AC28 /* UserSecureStorage.swift */,
+				534B73F82AC5467F0048AC28 /* SecureStorageDatasource.swift */,
+				534B74102AC6398D0048AC28 /* SecureStorageConvertible.swift */,
+				534B73FC2AC54BA10048AC28 /* KeyChainManager.swift */,
+			);
+			path = SecureStorage;
+			sourceTree = "<group>";
+		};
+		534B74192AC648630048AC28 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				534B73E22AC4FB280048AC28 /* UserRegistrationUseCase.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		534B74272AC7D1BB0048AC28 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				534B73A82AC400CB0048AC28 /* RegistrationView.swift */,
+				534B74282AC7D1FF0048AC28 /* RegistrationViewModel.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		534B742B2AC7FA870048AC28 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				534B742C2AC7FA940048AC28 /* RegistrationError.swift */,
+				534B742F2AC7FAC60048AC28 /* UserValidationError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +362,10 @@
 				534B737A2AC3BD6C0048AC28 /* PBXTargetDependency */,
 			);
 			name = AppListingTests;
+			packageProductDependencies = (
+				534B741B2AC6B13E0048AC28 /* Quick */,
+				534B741E2AC6B1690048AC28 /* Nimble */,
+			);
 			productName = AppListingTests;
 			productReference = 534B73782AC3BD6C0048AC28 /* AppListingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -288,6 +420,10 @@
 				Base,
 			);
 			mainGroup = 534B735D2AC3BD6A0048AC28;
+			packageReferences = (
+				534B741A2AC6B13E0048AC28 /* XCRemoteSwiftPackageReference "Quick" */,
+				534B741D2AC6B1690048AC28 /* XCRemoteSwiftPackageReference "Nimble" */,
+			);
 			productRefGroup = 534B73672AC3BD6A0048AC28 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -330,14 +466,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				534B73EF2AC51A180048AC28 /* UserRepositoryImpl.swift in Sources */,
+				534B74292AC7D1FF0048AC28 /* RegistrationViewModel.swift in Sources */,
 				534B736C2AC3BD6A0048AC28 /* ContentView.swift in Sources */,
+				534B742D2AC7FA940048AC28 /* RegistrationError.swift in Sources */,
 				534B736E2AC3BD6A0048AC28 /* Item.swift in Sources */,
+				534B740E2AC638B30048AC28 /* DomainConvertible.swift in Sources */,
 				534B736A2AC3BD6A0048AC28 /* AppListingApp.swift in Sources */,
 				534B73C62AC412D40048AC28 /* ValidationResult.swift in Sources */,
-				534B73AB2AC400EB0048AC28 /* LoginView.swift in Sources */,
-				534B73C42AC412C00048AC28 /* ValidatePasswordUseCase.swift in Sources */,
-				534B73C22AC412A40048AC28 /* ValidateEmailUseCase.swift in Sources */,
+				534B73FD2AC54BA10048AC28 /* KeyChainManager.swift in Sources */,
+				534B74302AC7FAC60048AC28 /* UserValidationError.swift in Sources */,
+				534B74242AC7C2DD0048AC28 /* RegistrationValidationUseCase.swift in Sources */,
+				534B74082AC55FE10048AC28 /* UserRegistrationUseCase.swift in Sources */,
+				534B740B2AC628A40048AC28 /* UserSecureStorage.swift in Sources */,
+				534B73F92AC5467F0048AC28 /* SecureStorageDatasource.swift in Sources */,
+				534B73F32AC51AEA0048AC28 /* UserRepository.swift in Sources */,
+				534B73FB2AC54B510048AC28 /* UserDataSource.swift in Sources */,
 				534B73A92AC400CB0048AC28 /* RegistrationView.swift in Sources */,
+				534B74112AC6398D0048AC28 /* SecureStorageConvertible.swift in Sources */,
+				534B73F52AC51BCD0048AC28 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,14 +492,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				534B73CC2AC413150048AC28 /* ValidateEmailUseCase.swift in Sources */,
-				534B73CA2AC413070048AC28 /* ValidatePasswordUseCaseTest.swift in Sources */,
-				534B73CF2AC4261C0048AC28 /* ValidateEmailUseCaseTest.swift in Sources */,
+				534B73F02AC51A180048AC28 /* UserRepositoryImpl.swift in Sources */,
+				534B74252AC7C2DD0048AC28 /* RegistrationValidationUseCase.swift in Sources */,
+				534B73D82AC428DC0048AC28 /* UserDataSource.swift in Sources */,
+				534B73E52AC4FBD80048AC28 /* UseCaseProvider.swift in Sources */,
 				534B737D2AC3BD6C0048AC28 /* AppListingTests.swift in Sources */,
-				534B73CD2AC413170048AC28 /* ValidatePasswordUseCase.swift in Sources */,
-				534B73D32AC4274F0048AC28 /* ValidateUsernameUseCaseTest.swift in Sources */,
+				534B740C2AC628A40048AC28 /* UserSecureStorage.swift in Sources */,
+				534B73FE2AC54BA10048AC28 /* KeyChainManager.swift in Sources */,
+				534B74122AC6398D0048AC28 /* SecureStorageConvertible.swift in Sources */,
+				534B742A2AC7D1FF0048AC28 /* RegistrationViewModel.swift in Sources */,
+				534B740F2AC638B30048AC28 /* DomainConvertible.swift in Sources */,
+				534B742E2AC7FA940048AC28 /* RegistrationError.swift in Sources */,
+				534B74312AC7FAC60048AC28 /* UserValidationError.swift in Sources */,
 				534B73CB2AC413120048AC28 /* ValidationResult.swift in Sources */,
-				534B73D12AC4266B0048AC28 /* ValidateUsernameUseCase.swift in Sources */,
+				534B73F42AC51AEA0048AC28 /* UserRepository.swift in Sources */,
+				534B73DB2AC429240048AC28 /* User.swift in Sources */,
+				534B73FA2AC5467F0048AC28 /* SecureStorageDatasource.swift in Sources */,
+				534B73E32AC4FB280048AC28 /* UserRegistrationUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,6 +830,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		534B741A2AC6B13E0048AC28 /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		534B741D2AC6B1690048AC28 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		534B741B2AC6B13E0048AC28 /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 534B741A2AC6B13E0048AC28 /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		534B741E2AC6B1690048AC28 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 534B741D2AC6B1690048AC28 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 534B735E2AC3BD6A0048AC28 /* Project object */;
 }
