@@ -16,4 +16,14 @@ struct User {
     let salt: String
 }
 
+extension User: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(username)
+        hasher.combine(email)
+    }
+    static func == (lhs: User, rhs: User) -> Bool {
+        return lhs.username == rhs.username && lhs.email == rhs.email
+    }
+}
+
 
