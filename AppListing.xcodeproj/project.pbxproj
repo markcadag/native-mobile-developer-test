@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		531274B32AC9C21200740D1D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531274B22AC9C21200740D1D /* ImagePicker.swift */; };
 		534B736A2AC3BD6A0048AC28 /* AppListingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73692AC3BD6A0048AC28 /* AppListingApp.swift */; };
 		534B736C2AC3BD6A0048AC28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B736B2AC3BD6A0048AC28 /* ContentView.swift */; };
 		534B736E2AC3BD6A0048AC28 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B736D2AC3BD6A0048AC28 /* Item.swift */; };
@@ -85,6 +86,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		531274B22AC9C21200740D1D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		534B73662AC3BD6A0048AC28 /* AppListing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppListing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		534B73692AC3BD6A0048AC28 /* AppListingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListingApp.swift; sourceTree = "<group>"; };
 		534B736B2AC3BD6A0048AC28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -160,6 +162,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		531274B12AC9C20100740D1D /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				531274B22AC9C21200740D1D /* ImagePicker.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
 		534B735D2AC3BD6A0048AC28 = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +238,7 @@
 		534B73A72AC400A90048AC28 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				531274B12AC9C20100740D1D /* ImagePicker */,
 				53F9821F2AC97146001B0E58 /* Listing */,
 				534B74352AC887910048AC28 /* Login */,
 				534B74272AC7D1BB0048AC28 /* Registration */,
@@ -566,6 +577,7 @@
 			files = (
 				534B73EF2AC51A180048AC28 /* UserRepositoryImpl.swift in Sources */,
 				534B74292AC7D1FF0048AC28 /* RegistrationViewModel.swift in Sources */,
+				531274B32AC9C21200740D1D /* ImagePicker.swift in Sources */,
 				534B736C2AC3BD6A0048AC28 /* ContentView.swift in Sources */,
 				53F982232AC9740C001B0E58 /* APIManager.swift in Sources */,
 				53F9822C2AC982CF001B0E58 /* ConfigurationManager.swift in Sources */,

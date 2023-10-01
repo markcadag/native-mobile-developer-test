@@ -9,26 +9,57 @@ import SwiftUI
 import Kingfisher
 
 struct ListingView: View {
-    
+  
     @ObservedObject var listingViewModel: ListingViewModel
     var layoutProperties: LayoutProperties
     
-    var body: some View {
-        List {
-            ForEach(listingViewModel.dummyUsers, id: \.id) { user in
-                ListingRowView(dummyUser: user, layoutProperties: layoutProperties)
+        var body: some View {
+            ZStack {
+            List {
+                ForEach(listingViewModel.dummyUsers, id: \.id) { user in
+                    ListingRowView(dummyUser: user, layoutProperties: layoutProperties)
+                }
+                
+                LoaderView(error: listingViewModel.error)
+                    .onAppear(perform: {
+                        //                    listingViewModel.getUsers()
+                    })
+                    .onTapGesture(perform: {
+                        //                    listingViewModel.retryGetUser()
+                    })
+            }.sheet(isPresented: $listingViewModel.openCameraRoll) {
+                ImagePicker(completionHandler: { value in
+                    listingViewModel.savePhoto(image: value)
+                }, sourceType: .camera)
+            }.alert(listingViewModel.message, isPresented: $listingViewModel.showAlertMessage) {
+                Button("OK", role: .cancel) { }
             }
+            .navigationTitle("Dummy Users")
+            .navigationBarTitleDisplayMode(.automatic)
             
-            LoaderView(error: listingViewModel.error)
-                .onAppear(perform: {
-                    listingViewModel.getUsers()
-                })
-                .onTapGesture(perform: {
-                    listingViewModel.retryGetUser()
-                })
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        listingViewModel.openCameraRoll = true
+                    }, label: {
+                        ZStack {
+                            Circle()
+                                .fill(.blue)
+                                .frame(width: layoutProperties.dimensValues.extraLarge * 3, height: layoutProperties.dimensValues.extraLarge * 3, alignment: .center)
+                                .shadow(color: Color("backgroundSecondary"), radius: 5)
+                            
+                            Text("Photo")
+                                .foregroundColor(.white)
+                                .padding()
+                        }
+                        
+                    }).padding(.trailing, 18)
+                        .padding(.bottom, 20)
+                }
+            }
         }
-        .navigationTitle("Dummy Users")
-        .navigationBarTitleDisplayMode(.automatic)
     }
 }
 

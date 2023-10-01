@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class ListingViewModel: ObservableObject {
     
@@ -18,6 +19,10 @@ class ListingViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     private let listDummyUseCase: ListDummyUserUseCase
+    
+    @Published var showAlertMessage = false
+    @Published var openCameraRoll = false
+    @Published var message = ""
     
     init(listDummyUseCase: ListDummyUserUseCase) {
         self.listDummyUseCase = listDummyUseCase
@@ -39,6 +44,12 @@ class ListingViewModel: ObservableObject {
                   self.currentPage += 1
               }.store(in: &cancellables)
       }
+    
+    func savePhoto(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        showAlertMessage = true
+        message = "Image Saved"
+    }
     
     func retryGetUser() {
         if !error.isEmpty {
