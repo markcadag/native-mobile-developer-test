@@ -76,6 +76,7 @@ class LoginViewModel: ObservableObject {
         into resultKeyPath: ReferenceWritableKeyPath<LoginViewModel, String>,
         validator: @escaping (Value) -> AnyPublisher<Void, Error>
     ) {
+        userExistenceValidation = ""
         validator(value)
             .sink(receiveCompletion: { completion in
                 switch completion {

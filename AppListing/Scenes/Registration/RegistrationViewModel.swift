@@ -68,7 +68,7 @@ class RegistrationViewModel: ObservableObject {
                 // Ensure that email and password fields are not empty
                 let fieldNotEmpty = !self.email.isEmpty && !self.password.isEmpty && !self.username.isEmpty
                 // Enable the button if email and password are valid and not empty
-                return usernameValidation.isEmpty && emailValidation.isEmpty && emailValidation.isEmpty && passwordValidation.isEmpty && fieldNotEmpty
+                return usernameValidation.isEmpty && emailValidation.isEmpty && passwordValidation.isEmpty && fieldNotEmpty
             }
             .assign(to: &$isButtonEnabled)
     }
@@ -94,6 +94,7 @@ class RegistrationViewModel: ObservableObject {
         into resultKeyPath: ReferenceWritableKeyPath<RegistrationViewModel, String>,
         validator: @escaping (Value) -> AnyPublisher<Void, Error>
     ) {
+        userExistenceValidation = ""
         validator(value)
             .sink(receiveCompletion: { completion in
                 switch completion {

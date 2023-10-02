@@ -10,6 +10,8 @@
 		531274B32AC9C21200740D1D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531274B22AC9C21200740D1D /* ImagePicker.swift */; };
 		531274B72ACA45A500740D1D /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531274B62ACA45A500740D1D /* ActivityIndicator.swift */; };
 		531274B92ACA45CC00740D1D /* ListingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531274B82ACA45CC00740D1D /* ListingRowView.swift */; };
+		531274BC2ACA6F3900740D1D /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 531274BB2ACA6F3900740D1D /* Factory */; };
+		531274BF2ACA719100740D1D /* ViewModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531274BE2ACA719100740D1D /* ViewModelContainer.swift */; };
 		534B736A2AC3BD6A0048AC28 /* AppListingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B73692AC3BD6A0048AC28 /* AppListingApp.swift */; };
 		534B736C2AC3BD6A0048AC28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B736B2AC3BD6A0048AC28 /* ContentView.swift */; };
 		534B736E2AC3BD6A0048AC28 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B736D2AC3BD6A0048AC28 /* Item.swift */; };
@@ -98,6 +100,7 @@
 		531274B22AC9C21200740D1D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		531274B62ACA45A500740D1D /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		531274B82ACA45CC00740D1D /* ListingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingRowView.swift; sourceTree = "<group>"; };
+		531274BE2ACA719100740D1D /* ViewModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelContainer.swift; sourceTree = "<group>"; };
 		534B73662AC3BD6A0048AC28 /* AppListing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppListing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		534B73692AC3BD6A0048AC28 /* AppListingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListingApp.swift; sourceTree = "<group>"; };
 		534B736B2AC3BD6A0048AC28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53F982482AC9AA33001B0E58 /* Kingfisher in Frameworks */,
+				531274BC2ACA6F3900740D1D /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +192,14 @@
 			path = ImagePicker;
 			sourceTree = "<group>";
 		};
+		531274BD2ACA713F00740D1D /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				531274BE2ACA719100740D1D /* ViewModelContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		534B735D2AC3BD6A0048AC28 = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				53F9822A2AC981EF001B0E58 /* Info.plist */,
+				531274BD2ACA713F00740D1D /* DI */,
 				53F982182AC93E2F001B0E58 /* CustomView */,
 				534B73A72AC400A90048AC28 /* Scenes */,
 				534B73692AC3BD6A0048AC28 /* AppListingApp.swift */,
@@ -483,6 +496,7 @@
 			name = AppListing;
 			packageProductDependencies = (
 				53F982472AC9AA33001B0E58 /* Kingfisher */,
+				531274BB2ACA6F3900740D1D /* Factory */,
 			);
 			productName = AppListing;
 			productReference = 534B73662AC3BD6A0048AC28 /* AppListing.app */;
@@ -564,6 +578,7 @@
 				534B741A2AC6B13E0048AC28 /* XCRemoteSwiftPackageReference "Quick" */,
 				534B741D2AC6B1690048AC28 /* XCRemoteSwiftPackageReference "Nimble" */,
 				53F982462AC9AA33001B0E58 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				531274BA2ACA6F3800740D1D /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = 534B73672AC3BD6A0048AC28 /* Products */;
 			projectDirPath = "";
@@ -631,6 +646,7 @@
 				534B74302AC7FAC60048AC28 /* UserValidationError.swift in Sources */,
 				534B74242AC7C2DD0048AC28 /* FieldValidationUseCase.swift in Sources */,
 				534B74082AC55FE10048AC28 /* UserRegistrationUseCase.swift in Sources */,
+				531274BF2ACA719100740D1D /* ViewModelContainer.swift in Sources */,
 				534B74412AC91D540048AC28 /* String+Extension.swift in Sources */,
 				53F982412AC993CB001B0E58 /* DummyUserPage.swift in Sources */,
 				534B740B2AC628A40048AC28 /* UserSecureStorage.swift in Sources */,
@@ -1012,6 +1028,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		531274BA2ACA6F3800740D1D /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
 		534B741A2AC6B13E0048AC28 /* XCRemoteSwiftPackageReference "Quick" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Quick/Quick.git";
@@ -1039,6 +1063,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		531274BB2ACA6F3900740D1D /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 531274BA2ACA6F3800740D1D /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
 		534B741B2AC6B13E0048AC28 /* Quick */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 534B741A2AC6B13E0048AC28 /* XCRemoteSwiftPackageReference "Quick" */;

@@ -7,26 +7,20 @@
 
 import SwiftUI
 import SwiftData
+import Factory
 
 @main
 struct AppListingApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
+    
+    let loginViewModel = Container.shared.loginViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            RegistrationView()
+                NavigationStack {
+                    ResponsiveView {properties in
+                        LoginView(layoutProperties: properties, viewModel: self.loginViewModel)
+                    }
+                }
         }
-        .modelContainer(sharedModelContainer)
     }
 }

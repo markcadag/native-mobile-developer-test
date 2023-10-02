@@ -7,10 +7,13 @@
 
 import Foundation
 import SwiftUI
+import Factory
 
 struct LoginView: View {
     
     let layoutProperties: LayoutProperties
+    let registrationViewModel = Container.shared.registrationViewModel()
+    let listingViewModel = Container.shared.listingViewModel()
     
     @ObservedObject var viewModel: LoginViewModel
 
@@ -52,19 +55,10 @@ struct LoginView: View {
                 .navigationTitle("Login")
                 .navigationTitle("AppListing")
                 .navigationDestination(for: Int.self, destination: { value in
-                    RegistrationView(layoutProperties: layoutProperties)
+                    RegistrationView(layoutProperties: layoutProperties, viewModel: self.registrationViewModel)
                 })
                 .navigationDestination(for: User.self, destination: { value in
-                    
-                    lazy var viewModel: ListingViewModel = {
-                        let apiManager = APIManager<UserAPIResponse>()
-                        let dataSource = APIDatasource(apiManager: apiManager)
-                        let userRepository  = UserRepositoryAPIImpl(userDataSource: dataSource)
-                        let listDummyUseCase = ListDummyUserUseCaseInteractor(userRepository: userRepository)
-                        return ListingViewModel(listDummyUseCase: listDummyUseCase)
-                    }()
-                    
-                    ListingView(listingViewModel: viewModel, user: value, layoutProperties: layoutProperties)
+                    ListingView(listingViewModel: self.listingViewModel, user: value, layoutProperties: layoutProperties)
                 })
                 .padding()
             }

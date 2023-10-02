@@ -11,14 +11,7 @@ struct RegistrationView: View {
     
     let layoutProperties: LayoutProperties
     
-    @ObservedObject private var viewModel: RegistrationViewModel = {
-        let keyChainManager = KeychainManager(service: "com.example.myApp")
-        let dataSource = SecureStorageDatasource(keychainManager: keyChainManager)
-        let userRepo = UserRepositoryImpl(userDataSource: dataSource)
-        let validator = FieldValidator(userRepository: userRepo)
-        let userRegUseCase  = UserRegistrationInteractor(userRepository: userRepo)
-        return RegistrationViewModel(registrationValidator: validator, registrationUseCase: userRegUseCase)
-    }()
+    @ObservedObject var viewModel: RegistrationViewModel
     
     var body: some View {
         ScrollView {
@@ -40,7 +33,7 @@ struct RegistrationView: View {
                     .background(viewModel.isButtonEnabled ? Color.blue : Color.gray)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
-                    .font(.system(size: 14))
+                    .font(.system(size: layoutProperties.dimensValues.medium))
                     .cornerRadius(10)
                 
             }.onAppear() {
