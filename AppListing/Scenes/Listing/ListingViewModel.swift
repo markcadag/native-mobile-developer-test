@@ -34,14 +34,18 @@ class ListingViewModel: ObservableObject {
             .sink { completion in
                 switch completion {
                 case .failure(let error):
-                    self.error = error.localizedDescription
+                    self.error = "\(error.localizedDescription). Tap to retry again"
                 case .finished:
                     break
                 }
             }
             receiveValue: { dummyPage in
-                  self.dummyUsers.append(contentsOf: dummyPage.data)
-                  self.currentPage += 1
+                if(dummyPage.data.isEmpty) {
+                    self.error = "Reached Last Page. Tap to retry again"
+                    return
+                }
+                self.dummyUsers.append(contentsOf: dummyPage.data)
+                self.currentPage += 1
               }.store(in: &cancellables)
       }
     

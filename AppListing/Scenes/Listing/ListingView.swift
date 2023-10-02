@@ -13,29 +13,33 @@ struct ListingView: View {
     @ObservedObject var listingViewModel: ListingViewModel
     var layoutProperties: LayoutProperties
     
-        var body: some View {
-            ZStack {
+    var body: some View {
+        ZStack {
             List {
                 ForEach(listingViewModel.dummyUsers, id: \.id) { user in
                     ListingRowView(dummyUser: user, layoutProperties: layoutProperties)
                 }
                 
-                LoaderView(error: listingViewModel.error)
+                LoaderView(error: listingViewModel.error, layoutProperties: layoutProperties)
                     .onAppear(perform: {
-                        //                    listingViewModel.getUsers()
+                        listingViewModel.getUsers()
                     })
                     .onTapGesture(perform: {
-                        //                    listingViewModel.retryGetUser()
+                        listingViewModel.retryGetUser()
                     })
-            }.sheet(isPresented: $listingViewModel.openCameraRoll) {
-                ImagePicker(completionHandler: { value in
-                    listingViewModel.savePhoto(image: value)
-                }, sourceType: .camera)
+            }.scrollContentBackground(.hidden)
+            .background(Color.clear)
+            .sheet(isPresented: $listingViewModel.openCameraRoll) {
+                VStack {
+                    ImagePicker(completionHandler: { value in
+                        listingViewModel.savePhoto(image: value)
+                    }, sourceType: .camera)
+                }.background(.black)
             }.alert(listingViewModel.message, isPresented: $listingViewModel.showAlertMessage) {
                 Button("OK", role: .cancel) { }
-            }
-            .navigationTitle("Dummy Users")
-            .navigationBarTitleDisplayMode(.automatic)
+            }.background(.clear)
+                .navigationTitle("Dummy Users")
+                .navigationBarTitleDisplayMode(.automatic)
             
             VStack {
                 Spacer()
@@ -46,17 +50,18 @@ struct ListingView: View {
                     }, label: {
                         ZStack {
                             Circle()
-                                .fill(.blue)
-                                .frame(width: layoutProperties.dimensValues.extraLarge * 3, height: layoutProperties.dimensValues.extraLarge * 3, alignment: .center)
-                                .shadow(color: Color("backgroundSecondary"), radius: 5)
+                                .frame(width: layoutProperties.dimensValues.extraLarge * 2.5, height: layoutProperties.dimensValues.extraLarge * 2.5)
+                                .foregroundColor(Color.white)
+                                .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 5)
                             
-                            Text("Photo")
-                                .foregroundColor(.white)
-                                .padding()
+                            Image(systemName: "camera.circle.fill")
+                                .resizable()
+                                .frame(width: layoutProperties.dimensValues.extraLarge * 2.5, height: layoutProperties.dimensValues.extraLarge * 2.5) // Adjust the size as needed
+                                .foregroundColor(.blue)
                         }
                         
-                    }).padding(.trailing, 18)
-                        .padding(.bottom, 20)
+                    }).padding(.trailing, layoutProperties.dimensValues.mediumLarge)
+                        .padding(.bottom, layoutProperties.dimensValues.medium)
                 }
             }
         }
@@ -66,36 +71,24 @@ struct ListingView: View {
 struct LoaderView: View {
     
     let error: String
+    let layoutProperties: LayoutProperties
     
     var body: some View {
-        
-        Text(error.isEmpty ? "Loading.." : "Failed. Tap to retry." )
-            .foregroundColor(error.isEmpty ? .green : .red )
-            .padding()
-    }
-}
-
-struct ListingRowView: View {
-    let dummyUser: DummyUser
-    
-    var layoutProperties: LayoutProperties
-    
-    var body: some View {
-        HStack (spacing: layoutProperties.dimensValues.medium) {
-            
-            let processor = RoundCornerImageProcessor(cornerRadius: layoutProperties.dimensValues.mediumLarge)
-            
-            KFImage.url(URL(string: dummyUser.picture)!)
-                     .setProcessor(processor)
-                     .loadDiskFileSynchronously()
-                     .cacheMemoryOnly()
-                     .fade(duration: 0.25)
-                     .resizable()
-                     .frame(width: layoutProperties.dimensValues.large * 4, height: layoutProperties.dimensValues.large * 4)
-            
-            Text("\(dummyUser.firstName) \(dummyUser.lastName)")
-                .font(.system(size: layoutProperties.dimensValues.medium))
+        HStack(alignment: .center) {
+            Spacer()
+            if(error.isEmpty) {
+                ActivityIndicator()
+                    .frame(width: layoutProperties.dimensValues.large * 2, height: layoutProperties.dimensValues.large * 2, alignment: .center)
+                    .foregroundColor(.gray)
+              
+            } else {
+                Text(error)
+                    .foregroundColor(.gray)
+                    .font(.system(size: layoutProperties.customFontSize.medium))
+                    .padding()
+            }
+            Spacer()
         }
-        .padding(4)
+
     }
 }
