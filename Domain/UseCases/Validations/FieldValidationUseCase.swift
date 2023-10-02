@@ -8,13 +8,13 @@
 import Foundation
 import Combine
 
-protocol RegistrationValidationUseCase {
+protocol FieldValidationUseCase {
     func validateUsername(username: String) -> AnyPublisher<Void, Error>
     func validateEmail(email: String) -> AnyPublisher<Void, Error>
     func validatePassword(password: String) -> AnyPublisher<Void, Error>
 }
 
-class RegistrationValidator: RegistrationValidationUseCase {
+class FieldValidator: FieldValidationUseCase {
     
     let UNAME_MAX_CHARACTER = 6
     let PWORD_MAX_CHARACTER = 6

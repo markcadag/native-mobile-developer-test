@@ -11,6 +11,7 @@ import Kingfisher
 struct ListingView: View {
   
     @ObservedObject var listingViewModel: ListingViewModel
+    var user: User
     var layoutProperties: LayoutProperties
     
     var body: some View {

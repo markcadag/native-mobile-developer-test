@@ -20,37 +20,57 @@ class RegistrationViewModel: ObservableObject {
     @Published var usernameValidation = ""
     @Published var passwordValidation = ""
     @Published var userExistenceValidation = ""
+    @Published var isButtonEnabled = false
       
     private var cancellables: Set<AnyCancellable> = []
     
-    private let registrationValidator: RegistrationValidationUseCase
+    private let registrationValidator: FieldValidationUseCase
     private let registrationUseCase: UserRegistrationUseCase
     
-    init(registrationValidator: RegistrationValidationUseCase, registrationUseCase: UserRegistrationUseCase) {
+    init(registrationValidator: FieldValidationUseCase, registrationUseCase: UserRegistrationUseCase) {
         self.registrationValidator = registrationValidator
         self.registrationUseCase = registrationUseCase
     }
     
     func initViewModel() {
-        
-        $username.debounce(for: 0.5, scheduler: DispatchQueue.main)
+        $username
+            .debounce(for: 0.5, scheduler: DispatchQueue.main)
+            .dropFirst()
             .removeDuplicates()
             .sink { [weak self] value in
                 guard let self = self else { return }
                 self.validateField(value: value, into: \.usernameValidation, validator: self.registrationValidator.validateUsername)
-            }.store(in: &cancellables)
+            }
+            .store(in: &cancellables)
         
-        $email.debounce(for: 0.5, scheduler: DispatchQueue.main)
+        $email
+            .debounce(for: 0.5, scheduler: DispatchQueue.main)
+            .dropFirst()
             .sink { [weak self] value in
                 guard let self = self else { return }
                 self.validateField(value: value, into: \.emailValidation, validator: self.registrationValidator.validateEmail)
-            }.store(in: &cancellables)
+            }
+            .store(in: &cancellables)
         
-        $password.debounce(for: 0.5, scheduler: DispatchQueue.main)
+        $password
+            .debounce(for: 0.5, scheduler: DispatchQueue.main)
+            .dropFirst()
             .sink { [weak self] value in
                 guard let self = self else { return }
                 self.validateField(value: value, into: \.passwordValidation, validator: self.registrationValidator.validatePassword)
-            }.store(in: &cancellables)
+            }
+            .store(in: &cancellables)
+        
+        Publishers.CombineLatest3($usernameValidation, $emailValidation, $passwordValidation)
+            .dropFirst()
+            .map { [weak self] usernameValidation, emailValidation, passwordValidation in
+                guard let self = self else { return false }
+                // Ensure that email and password fields are not empty
+                let fieldNotEmpty = !self.email.isEmpty && !self.password.isEmpty && !self.username.isEmpty
+                // Enable the button if email and password are valid and not empty
+                return usernameValidation.isEmpty && emailValidation.isEmpty && emailValidation.isEmpty && passwordValidation.isEmpty && fieldNotEmpty
+            }
+            .assign(to: &$isButtonEnabled)
     }
     
     func registerUser() {
