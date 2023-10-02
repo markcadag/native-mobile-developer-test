@@ -7,6 +7,11 @@
 
 import Foundation
 import Combine
+import SwiftUI
+
+enum RegistrationRoute : String , Hashable {
+    case listView
+}
 
 class RegistrationViewModel: ObservableObject {
     
@@ -21,6 +26,8 @@ class RegistrationViewModel: ObservableObject {
     @Published var passwordValidation = ""
     @Published var userExistenceValidation = ""
     @Published var isButtonEnabled = false
+    @Published var registrationPath = NavigationPath()
+    @Published var user: User? = nil
       
     private var cancellables: Set<AnyCancellable> = []
     
@@ -84,10 +91,21 @@ class RegistrationViewModel: ObservableObject {
                 case .failure(let error):
                     self.userExistenceValidation = error.localizedDescription
                 }
-            }, receiveValue: { _ in
+            }, receiveValue: { user in
+                self.user = user
+                self.navigate(route: .listView)
             })
             .store(in: &cancellables)
     }
+    
+    func navigate(route: RegistrationRoute) {
+        registrationPath.append(route)
+    }
+    
+    func pop() {
+        registrationPath.removeLast()
+    }
+    
     
     func validateField<Value>(
         value: Value,

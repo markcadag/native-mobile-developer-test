@@ -34,6 +34,10 @@ class UserRegistrationInteractor: UserRegistrationUseCase {
                     let saltBase64 = salt.base64EncodedString()
                     let hashedPassword = self.hashPassword(password, withSalt: salt)
                     let newUser = User(username: username, email: email, password: password, passwordHash: hashedPassword, salt: saltBase64)
+                    
+                    
+                    print("saving password and salt \(hashedPassword) \(saltBase64)");
+                    
                     // Return the result of saveUser
                     return self.userRepository.saveUser(user: newUser)
                         .print("saveUser")

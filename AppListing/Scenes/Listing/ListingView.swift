@@ -20,7 +20,6 @@ struct ListingView: View {
                 ForEach(listingViewModel.dummyUsers, id: \.id) { user in
                     ListingRowView(dummyUser: user, layoutProperties: layoutProperties)
                 }
-                
                 LoaderView(error: listingViewModel.error, layoutProperties: layoutProperties)
                     .onAppear(perform: {
                         listingViewModel.getUsers()
@@ -39,8 +38,9 @@ struct ListingView: View {
             }.alert(listingViewModel.message, isPresented: $listingViewModel.showAlertMessage) {
                 Button("OK", role: .cancel) { }
             }.background(.clear)
-                .navigationTitle("Dummy Users")
+                .navigationTitle("Hi \(user.username)!")
                 .navigationBarTitleDisplayMode(.automatic)
+                .navigationBarBackButtonHidden()
             
             VStack {
                 Spacer()

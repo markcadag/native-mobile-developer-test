@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class LoginViewModel: ObservableObject {
     
@@ -19,7 +20,7 @@ class LoginViewModel: ObservableObject {
     @Published var passwordValidation = ""
     @Published var userExistenceValidation = ""
     @Published var isButtonEnabled = false
-
+    @Published var user: User?  = nil
       
     private var cancellables: Set<AnyCancellable> = []
     
@@ -48,9 +49,8 @@ class LoginViewModel: ObservableObject {
             }.store(in: &cancellables)
         
         Publishers.CombineLatest($emailValidation, $passwordValidation)
-            .dropFirst() // This ensures that the initial values are not considered
+            .dropFirst()
             .map { emailValidation, passwordValidation in
-                // Disable the button if either emailValidation or passwordValidation is not empty
                 return emailValidation.isEmpty && passwordValidation.isEmpty && !self.email.isEmpty && !self.password.isEmpty
             }
             .assign(to: &$isButtonEnabled)
@@ -67,7 +67,9 @@ class LoginViewModel: ObservableObject {
                 case .failure(let error):
                     self.userExistenceValidation = error.localizedDescription
                 }
-            }, receiveValue: { _ in })
+            }, receiveValue: { user in
+                self.user = user
+            })
             .store(in: &cancellables)
     }
     

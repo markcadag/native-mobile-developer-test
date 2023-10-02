@@ -16,10 +16,12 @@ struct LoginView: View {
     let listingViewModel = Container.shared.listingViewModel()
     
     @ObservedObject var viewModel: LoginViewModel
+    
+    @StateObject var navigation = NavigationCoordinator()
 
     var body: some View {
         GeometryReader { gp in
-            NavigationStack {
+            NavigationStack(path: $navigation.path) {
                 ScrollView {
                     VStack {
                         EntryField(placeHolder: "Enter Email Address", layoutProperties: layoutProperties, field: $viewModel.email, value: $viewModel.emailValidation)
@@ -42,7 +44,7 @@ struct LoginView: View {
                             .cornerRadius(10)
                             .ignoresSafeArea(.keyboard)
                         
-                        NavigationLink(value: 2) {
+                        NavigationLink(value: AppRoute.registration) {
                             Text("Create an account")
                                 .font(.system(size: layoutProperties.customFontSize.medium))
                                 .foregroundColor(.blue)
@@ -50,17 +52,30 @@ struct LoginView: View {
                         }
                     }.onAppear() {
                         viewModel.initViewModel()
-                    }.frame(maxWidth: .infinity, minHeight: gp.size.height)
+                    }.onChange(of: viewModel.user, { oldValue, newValue in
+                        guard let user = newValue else { return }
+                        navigation.path.append(user)
+                    })
+                    .frame(maxWidth: .infinity, minHeight: gp.size.height)
+                    .navigationTitle("Login")
+                    .navigationTitle("AppListing")
+                    .navigationDestination(for: AppRoute.self, destination: { route in
+                        switch route {
+                        case .listView:
+                            ListingView(listingViewModel: self.listingViewModel, user: self.viewModel.user!, layoutProperties: layoutProperties)
+                                .environmentObject(navigation)
+                        case .registration:
+                            RegistrationView(layoutProperties: layoutProperties, viewModel: self.registrationViewModel)
+                                .environmentObject(navigation)
+                        }
+                    })
+                    .navigationDestination(for: User.self, destination: { value in
+                        ListingView(listingViewModel: self.listingViewModel, user: value, layoutProperties: layoutProperties)
+                            .environmentObject(navigation)
+                    })
+                    .padding()
                 }
-                .navigationTitle("Login")
-                .navigationTitle("AppListing")
-                .navigationDestination(for: Int.self, destination: { value in
-                    RegistrationView(layoutProperties: layoutProperties, viewModel: self.registrationViewModel)
-                })
-                .navigationDestination(for: User.self, destination: { value in
-                    ListingView(listingViewModel: self.listingViewModel, user: value, layoutProperties: layoutProperties)
-                })
-                .padding()
+                
             }
         }
     }
@@ -68,17 +83,7 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        lazy var viewModel: LoginViewModel = {
-            let keyChainManager = KeychainManager(service: "com.example.myApp")
-            let dataSource = SecureStorageDatasource(keychainManager: keyChainManager)
-            let userRepo = UserRepositoryImpl(userDataSource: dataSource)
-            let validator = FieldValidator(userRepository: userRepo)
-            let userLoginUseCase  = UserLoginUseCaseInteractor(userRepository: userRepo)
-            return LoginViewModel(fieldValidator: validator, userLoginUseCase: userLoginUseCase)
-        }()
-        
-        LoginView(layoutProperties: getPreviewLayoutProperties(landscape: false, height: 844, width: 390), viewModel: viewModel)
+        LoginView(layoutProperties: getPreviewLayoutProperties(landscape: false, height: 844, width: 390), viewModel: Container.shared.loginViewModel())
             .previewDevice("iPhone 11")
     }
 }
