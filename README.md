@@ -1,3 +1,44 @@
+## App Project Overview
+Swift-based iOS application developed with a clean code approach. It employs a layered architecture comprising the **Data Layer**, **Application Layer**, and **Domain Layer** to ensure modularity and maintainability. The project utilizes **SwiftUI** for the user interface
+
+## Technology Stack
+
+### Programming Language
+
+- Swift
+
+### Frameworks and Libraries
+
+- SwiftUI: Used for building the user interface with a declarative and intuitive syntax.
+- Factory: A library or design pattern for creating objects and managing dependencies.
+- Quick and Nimble: Testing frameworks for writing BDD-style tests and assertions.
+
+### Project Structure
+
+The project follows a clean code approach, organized into distinct layers:
+
+- Data Layer: Responsible for handling data-related operations. This includes data retrieval, storage, and communication with external services or APIs.
+- Application Layer: Contains the core logic of the application. It serves as an intermediary between the Data Layer and the Domain Layer, orchestrating business operations and data manipulation.
+- Domain Layer: Represents the domain-specific business logic and entities. It defines the fundamental building blocks of the application's functionality.
+
+### Device Compatibility
+
+- The code is designed to be responsive and adaptive to different screen sizes and devices.
+
+### Getting Started
+
+To get started with this project, follow these steps:
+
+- Clone the repository to your local machine.
+- Open the project in Xcode.
+- Open` Config.xcconfig ` and add DummyAPI key eg. `API_KEY = 1sfg212545212`
+- Build and run the application on the iOS simulator or a physical device.
+- 
+###  Testing
+
+-  You can run tests using the Quick and Nimble testing frameworks i've only add a test in login use cases
+
+
 # native-mobile-developer-test
 Mobile App Development Practical Test
 
@@ -46,3 +87,4 @@ Task 5: Code Quality and Documentation
 Bonus Task: Unit Testing
 
 - Write unit tests for a specific component or function within the app.
+
